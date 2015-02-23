@@ -1,0 +1,82 @@
+{
+    "name": "Anti Adblock",
+    "description": "With one click, automatically detect and show a message to your visitors who are blocking ads in your site. The message will be displayed until the adblocker is turned off. This will increase the revenue of the site and increase awareness among visitors.",
+    "version": "0.11",
+    "category": "advertising",
+    "main": "public/javascripts/cfabk.js",
+    "config":{
+        "details":{
+            "Language": "English",
+            "Price": "$0.99/month per site",
+            "Restrictions": "None",
+            "has_js": true
+        }, 
+        "assets":{
+            "logos" : {
+                "200px": "./public/images/antiadblock-logo-200.png",
+                "132px": "./public/images/antiadblock-logo-132.png"
+            },
+            "detail_page" : [
+                "./public/images/example.png"
+            ],
+            "images" : [
+                "./public/images/counter.png"
+            ]
+        },
+        "interface": [
+            {
+                "type": "string",
+                "id": "message",
+                "name": "Display text",
+                "description": "The text you would like displayed on your site when adblocking is detected.",
+                "domain_request": true,
+                "private": true
+            },
+			{
+                "type": "string",
+                "id": "link",
+                "name": "Link",
+                "description": "A URL with more information. Should start with 'http://'.",
+                "domain_request": true,
+                "private": true
+            },
+			{
+                "type": "string",
+                "id": "linktext",
+                "name": "Link Text",
+                "description": "The text you want to be turned into a link. e.g. 'Read more...'.",
+                "domain_request": true,
+                "private": true
+            },
+            {
+                "type": "select",
+                "id": "branded",
+                "name": "Display Antiadblock Logo?",
+                "description": "Disable/Enable Antiadblock logo",
+                "options": [
+                    {
+                        "label": "Yes, display the logo!",
+                        "value": "true"
+                    },
+                    {
+                        "label": "No, do not display the logo",
+                        "value": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "account": {
+        "callback_url": "http://www.antiadblock.me/cf/cfapi.php",
+        "user_fields": ["email"]
+    },
+    "billing": {
+        "type": "zone",
+        "plans":[
+            {
+                "name" : "AntiAdblock Basic Account",
+                "price": "0.99"
+            }
+        ]
+    }
+}
