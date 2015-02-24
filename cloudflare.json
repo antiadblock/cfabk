@@ -17,10 +17,7 @@
                 "132px": "./public/images/antiadblock-logo-132.png"
             },
             "detail_page" : [
-                "./public/images/example.png"
-            ],
-            "images" : [
-                "./public/images/counter.png"
+                "./public/images/scr1.png"
             ]
         },
         "interface": [
